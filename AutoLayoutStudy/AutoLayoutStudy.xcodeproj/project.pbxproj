@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F807A650299A09DF000924BE /* WeatherBG_Sun.png in Resources */ = {isa = PBXBuildFile; fileRef = F807A64F299A09DE000924BE /* WeatherBG_Sun.png */; };
+		F807A652299A09E4000924BE /* weather_icon_sun_cloud.png in Resources */ = {isa = PBXBuildFile; fileRef = F807A651299A09E4000924BE /* weather_icon_sun_cloud.png */; };
 		F813B7AD2998E126005F4D75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F813B7AC2998E126005F4D75 /* AppDelegate.swift */; };
 		F813B7AF2998E126005F4D75 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F813B7AE2998E126005F4D75 /* SceneDelegate.swift */; };
 		F813B7B12998E126005F4D75 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = F813B7B02998E126005F4D75 /* ViewController.swift */; };
@@ -16,6 +18,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		F807A64F299A09DE000924BE /* WeatherBG_Sun.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WeatherBG_Sun.png; sourceTree = "<group>"; };
+		F807A651299A09E4000924BE /* weather_icon_sun_cloud.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weather_icon_sun_cloud.png; sourceTree = "<group>"; };
 		F813B7A92998E126005F4D75 /* AutoLayoutStudy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoLayoutStudy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		F813B7AC2998E126005F4D75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		F813B7AE2998E126005F4D75 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +67,8 @@
 				F813B7B52998E129005F4D75 /* Assets.xcassets */,
 				F813B7B72998E129005F4D75 /* LaunchScreen.storyboard */,
 				F813B7BA2998E129005F4D75 /* Info.plist */,
+				F807A64F299A09DE000924BE /* WeatherBG_Sun.png */,
+				F807A651299A09E4000924BE /* weather_icon_sun_cloud.png */,
 			);
 			path = AutoLayoutStudy;
 			sourceTree = "<group>";
@@ -127,6 +133,8 @@
 			files = (
 				F813B7B92998E129005F4D75 /* LaunchScreen.storyboard in Resources */,
 				F813B7B62998E129005F4D75 /* Assets.xcassets in Resources */,
+				F807A652299A09E4000924BE /* weather_icon_sun_cloud.png in Resources */,
+				F807A650299A09DF000924BE /* WeatherBG_Sun.png in Resources */,
 				F813B7B42998E126005F4D75 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
