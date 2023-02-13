@@ -5,12 +5,9 @@
 
 <br>
 
-### AutoLayout 마스터하기~  
+**AutoLayout 마스터하기~**  
 
-Storyboard의 UI를 구성할 때, 가장 헷갈리는 AutoLayout  
-
-대충 알긴 하지만, 대충 할 순 없다!!  
-
+Storyboard의 UI를 구성할 때, 가장 헷갈리는 AutoLayout. 대충 알긴 하지만, 대충 할 순 없다!!  
 진정한 멋진 iOS 개발자가 되기 위해 AutoLayout, 내가 접수 ^_____^  
 
 <Br>
