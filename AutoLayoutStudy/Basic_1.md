@@ -7,11 +7,25 @@
 
 # Index
 
-
 - [Constraint](#contraint)
+
   - [Add New Contraints](#add-new-constraints)
+
   - [Add New Alignment Constraints](#add-new-alignment-constraints)
+
   - [Mutilplier](#about-multiplier)
+
+- [Priority](#priority)
+
+  - [Content Hugging Priority](#content-hugging-priority)
+
+  - [Content Compression Resistance Priority](#content-compression-resistance-priority)
+
+  - [Constraints Priority](#constraints-priority)
+
+- [Rotation](#rotation)
+
+- [ScrollView](#scrollView)
 
 <br>
 <br>
@@ -161,13 +175,154 @@ x, y 값을 지정해주면 되지 않을까? OR 중앙 정렬 후, constant 값
 <br>  
 <br>
 
-# Safe Area
+# Priority
 
 <br>
 
-> Safe Area는 iPhone X 부터 생긴 개념으로, Safe Area 내만 사용하도록 권장하기 위해 생겼다.  
-> 최근 iPhone들은 모두 사용하고 디스플레이가 다르게 나와 Safe Area가 다를 수 있으므로 잘 체크해주자! ✅
+AutoLayout에서 priority란, 
+
+```constraints``` 의 우선순위를 설정해서 어떤 상황에 대해 우선순위를 따라 적용되는 것
+
+→ 이로 인해, 다른 오브젝트가 우선순위에 밀려 줄어들거나 밀릴 수 있다.
 
 <br>
 
-새로운 내용 추가하기
+## Content Hugging Priority
+
+<br>
+
+* 오브젝트의 컨텐츠를 그대로 유지할 수 있는 우선순위
+
+* 범위: 1 ~ 1000 (1000: 어떤 경우에 대해서도 변함없음)
+
+* 상대 오브젝트와 동일한 priority를 가지고 있다면, 둘다 컨텐츠의 크기 유지
+
+* Hugging Priority가 더 크다면 다른 오브젝트와 만나더라도 크기 유지. (다른 오브젝트의 크기가 변함)
+
+* Hugging Priority가 더 작다면 다른 오브젝트의 크기에 맞춰 크기 변화. (다른 오브젝트의 크기는 유지)
+
+
+## Content Compression Resistance Priority
+
+<br>
+
+* 오브젝트의 크기를 유지하고, 늘려지거나 줄어드는 것을 방지하는 우선순위
+
+* 현재 오브젝트보다 큰 오브젝트에 의해 눌리는 상황에 사용
+
+<br>
+
+> ⭐️ hugging은 절대적인 크기, compression resistance는 상대적인 크기라고 생각한다.  
+> Hugging은 현재 오브젝트의 절대적인 크기를 유지하도록 하는 우선순위  
+> Compression resistance는 현재 오브젝트의 크기를 다른 오브젝트의 크기에 반응해서 어떻게 할 것인지(줄어들거나 늘어나게 둘 것인지 그대로 유지할 것인지)를 선택하는 우선순위
+
+<br>
+
+## Constraints Priority]
+
+<br>
+
+constraints에 priority 프로퍼티 값을 설정할 수 있다.
+
+예시)  
+leading의 priority가 1000 이라는 것은 priority가 가장 높으니까 맨 처음 이 constraint 값을 적용.
+만약 leading priority를 200으로 설정하면, 
+
+<br>
+
+<img width="550" alt="priority" src="https://user-images.githubusercontent.com/63290629/218636717-5e087c50-8141-4500-aa9a-961f36d34090.png">
+
+<br>
+
+* 점선과 함께 간격이 멀어지는데 priority가 낮아서 적용 순서가 밀린 것
+
+* 우측 Hugging priority 252, Compression Resistance Priority 750
+
+* 좌측 Hugging priority 251, Compression Resistance Priority 750
+
+* 다른 constraint 적용 → compression resistance priority → Hugging priority → leading priority 순
+
+
+<br>
+<br>
+
+
+# Rotation
+
+<br>
+
+디바이스의 가로모드(```Landscape```), 세로모드(```Portrait```)에 따른 UI 구성
+
+AutoLayout을 사용하면 가로모드로 바꿔도 그에 맞게 구성이 된다.
+
+Rotation은 **가로모드와 세로모드의 UI 구성을 다르게 하고 싶을 때 사용**한다.
+
+[ Vary for Traits ] Xcode13부터 없어짐
+
+⬇️
+
+```
+Xcode > Setting > General > File Extension > Show All
+```
+
+<img width="942" alt="setting" src="https://user-images.githubusercontent.com/63290629/218636723-386a4e67-a95f-4ef1-895e-bf935dec362e.png">
+
+<br>
+
+📌 [Apple HIG > Layout](https://developer.apple.com/design/human-interface-guidelines/foundations/layout)
+
+<br>
+
+<img width="1442" alt="HIG_Layout" src="https://user-images.githubusercontent.com/63290629/218636728-beff64dd-c582-41b0-87b8-ac928c94a62b.png">
+
+
+<br>
+
+제작하고 있는 앱이 지원하는 디바이스에 맞춰서 진행 
+
+iPhone의 
+
+- 세로모드: any width, `regular height`
+
+- 가로모드: any width, `compact height`
+
+
+모든 경우에 있어서 하나씩 하면 실수할수도 있고, 너무 오래 걸린다. 
+
+→ Constraints를 모두 선택해서 한번에 바꾸기
+
+ex) 세로모드 기준, 가로모드는 새로운 layout을 만들어서 설정하겠다라는 가정
+
+```size inspector```에서
+
+<br> 
+
+<img width="1552" alt="portrait" src="https://user-images.githubusercontent.com/63290629/218636731-61c4dfb6-a256-48c6-a911-6723af064304.png">
+
+<br>
+
+* 기존의 Installed 체크 해제
+
+* hR Installed 체크 → 세로모드에서만 가능한 설정
+
+* 가로모드로 변경 시 → constraints들이 비활성화
+
+<br> 
+
+<img width="1552" alt="landscape1" src="https://user-images.githubusercontent.com/63290629/218636733-7aa3fd50-49ff-4ca1-b4f3-c12aa31ab515.png">
+
+<br>
+
+* 가로모드에선 비활성화 된 Constraints에 상관없이 가로모드에 내가 원하는 UI 구성으로 바꿔주면 된다.
+
+* 가로모드 설정 추가 (wC Installed)
+
+<br>
+
+<img width="1552" alt="landscape2" src="https://user-images.githubusercontent.com/63290629/218636737-af880e5d-58c2-474c-b42c-76e9c5625a6a.png">
+
+<br>
+
+> - Installed : 모든 경우에서의 설정
+> - hR Installed : 세로 모드의 경우에서의 설정
+> - wC Installed : 가로 모드의 경우에서의 설정
