@@ -7,6 +7,8 @@
 
 # Index
 
+- [AutoLayout](#autolayout)
+
 - [Constraint](#contraint)
 
   - [Add New Contraints](#add-new-constraints)
@@ -25,7 +27,34 @@
 
 - [Rotation](#rotation)
 
-- [ScrollView](#scrollView)
+- [ScrollView](#scrollview)
+
+<br>
+<br>
+
+# AutoLayout
+
+**💡 AutoLayout 에러의 가장 큰 이유**   
+
+- 정확한 위치를 잡을 수 없기 때문
+
+- 정확한 크기를 잡을 수 없기 때문
+
+<br>
+
+```top```, ```bottom```, ```trailing```, ```leading``` 모두 설정했다면 오브젝트의 크기인 ```width```와 ```height``` 값을 도출할 수 있기 때문에 에러 발생 X   
+
+그러나 (top, bottom), (trailing, leading) 쌍 중 하나의 값이라도 설정하지 않으면 width 혹은 height 값을 시스템에서 도출할 수 없기 때문에 에러 발생  
+
+만약 width, height 값을 설정해줬다면 그에 맞는 edge 값을 설정하지 않아도 괜찮음
+
+<br>
+
+즉, top 값만 설정했을 경우 
+* height 값 혹은 bottom 값이 있으면 오류 x
+
+* 둘 다 없으면 오류
+
 
 <br>
 <br>
@@ -326,3 +355,53 @@ ex) 세로모드 기준, 가로모드는 새로운 layout을 만들어서 설정
 > - Installed : 모든 경우에서의 설정
 > - hR Installed : 세로 모드의 경우에서의 설정
 > - wC Installed : 가로 모드의 경우에서의 설정
+
+<br>
+<br>
+
+# ScrollView
+
+<br>
+
+```
+ScrollView > Size Inspector > Content Layout  Guides 체크 해제
+```
+
+<br>
+
+* ScrollView는 안에 있는 컨텐츠에 대한 constraints 값이 설정되어 있어야 함
+
+* 컨텐츠의 width, height만 정확하다면,스크롤할거니까 bottom의 값은 정확하지 않아도 됨 
+
+* 컨텐츠의 width, height 값을 없애고 화면에 꽉 채우도록 하면, 디스플레이 화면을 넘어서지만 스크롤링해서 이동 가능
+
+<br>
+
+
+여러 오브젝트를 ScrollView 안에 넣을 경우
+
+* 오브젝트들을 하나의 ```View```로 감싸고 그 view를 ```ScrollView```로 감싸는게 깔끔
+
+* ```Embed In View > View```
+
+* ScrollView를 화면에 꽉차게 → constraints edges = 0
+
+* TextField의 값에 따라서 사이즈가 결정되도록. TextFields의 constraints edges = 20
+
+* TextField 오브젝트를 감싼 View의 constraints edges = 0
+
+* TextField 오브젝트를 감싼 View를 SuperView로 우클릭 드래그해서 Equal Width → **화면 width에 맞춰서 textfield 사이즈 변경**
+
+<br>
+
+**⭐️ system에서 자동 설정해주는 것과 내가 원하는 설정이 다를 수 있다.**  
+
+* 문제: Textfield를 감싼 View를 SuperView에 Equal width로 설정해서 SuperView의 width에 TextField가 맞도록 했지만 변화가 없음
+
+* 해결: Equal Width constraint의 size inspector에 들어가니 multiplier가 0.92 로 설정되어 있었다. 이를 1로 바꿔주니 원하던 대로 결과가 나왔다.
+
+* 배운 것: ***시스템이 자동으로 설정해준 것도 다시 보자!***
+
+
+<br>
+<br>
