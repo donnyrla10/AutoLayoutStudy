@@ -39,3 +39,5 @@ Storyboard의 UI를 구성할 때, 가장 헷갈리는 AutoLayout. 대충 알긴
     
     - Rotation
     
+    - ScrollView
+    
