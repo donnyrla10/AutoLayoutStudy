@@ -15,11 +15,13 @@ Storyboard의 UI를 구성할 때, 가장 헷갈리는 AutoLayout. 대충 알긴
 
 ### 목표
 
-- AutoLayout 실습 & 정리
+- AutoLayout 실습
 
-- README.md로 각 강의 마다 정리하기
+- 각 강의 마다 정리하기
 
 - 블로그 포스팅
+
+- AutoLayout 능숙하고 빠르게 사용해서 UI 구현하는 iOS 개발자 되기 🎶
 
 <Br>
 
@@ -29,7 +31,7 @@ Storyboard의 UI를 구성할 때, 가장 헷갈리는 AutoLayout. 대충 알긴
 
 ### 정리 및 복습
 
-* [Basic_1](https://github.com/donnyrla10/AutoLayoutStudy/blob/main/AutoLayoutStudy/Basic_1.md)
+* [Basic](https://github.com/donnyrla10/AutoLayoutStudy/blob/main/AutoLayoutStudy/Basic.md)
 
     - Constraints
 
@@ -41,3 +43,10 @@ Storyboard의 UI를 구성할 때, 가장 헷갈리는 AutoLayout. 대충 알긴
     
     - ScrollView
     
+    - Margin
+    
+    - StackView
+    
+    - Button Inset
+    
+    - Codd Anchor
