@@ -29,6 +29,14 @@
 
 - [ScrollView](#scrollview)
 
+- [Margin](#margin)
+
+- [StackView](#stackview)
+
+- [Button Inset](#button-inset)
+
+- [Code Anchor](#code-anchor)
+
 <br>
 <br>
 
@@ -405,3 +413,240 @@ ScrollView > Size Inspector > Content Layout  Guides 체크 해제
 
 <br>
 <br>
+
+# Margin
+
+<br>
+
+> **AutoLayout의 Constrain to margins란?**
+내 View의 Sub View들을 배치할 때 margin을 주는 것
+즉, `오브젝트 내부`에 margin 값을 주는 것
+> 
+
+<br>
+
+- View에 edges들을 0으로 설정하고, size inspector에서 `Layout Margins`에 Fixed > margin 값을 넣는다 (default: 8)
+
+- Sub View에 Add New Constraints를 할 때 Constrain to margins에 체크하면, View의 내부 margin만큼 Sub View에 margin이 들어간다
+
+<br>
+
+💡 margin은 언제 사용하면 좋을까?
+
+한 view 안에 여러 sub view를 동일하게 view와 간격을 주고 싶다면, view에 margin을 한번만 줘도 모든 sub view에 margin이 적용되어 동일한 간격이 된다. (이렇게 안하면 각각 오브젝트에 따로 설정해줘야 한다)
+
+<br>
+<br>
+
+# StackView
+
+- 오브젝트 나열-정렬  
+- 여러 오브젝트를 정렬/배치해야할 때, 복잡한 constraints를 단순화
+
+<br> 
+
+**Attributes Inspector** 
+
+<img width="251" alt="stackview" src="https://user-images.githubusercontent.com/63290629/219273758-29cbff0e-e168-4368-b085-fac87eb6c934.png">
+
+<br>
+
+- ```Axis```: 정렬 축
+
+    - Horizontal
+
+    - Vertical
+
+- ```Alignment```: 정렬 기준
+
+    - Horizontal
+
+        - Fill
+
+        - Top
+
+        - Bottom
+
+        - Leading
+
+        - Trailing
+
+        - First Baseline
+
+        - Last Baseline
+        
+    - Vertical
+
+        - Fill
+
+        - Leading
+
+        - Center
+
+        - Trailing
+
+- ```Distribution```: Stack 안에 있는 오브젝트들간의 분배
+
+    - Fill: 오브젝트가 가지고 있는 사이즈에 맞춰서 채우기
+
+    - Fill Equally: 모든 오브젝트 사이즈를 동일하게 채우기
+
+    - Fill Proportionally: 오브젝트의 크기를 조정해서 사용 가능한 공간을 채우기.      
+    고유한 오브젝트 크기에 따라 비례적으로 크기가 조정
+
+    - Equal Spacing: 오브젝트 사이즈는 원본 그대로 둔 채로, 오브젝트 간의 간격을 동일하게   
+    (아래 spacing 값 x, spacing 값은 최솟값)
+
+    - Equal Centering: 오브젝트의 center를 기준으로 동일한 간격
+
+- ```Spacing```: 오브젝트 간의 간격
+
+    - Fill, Fill Equally는 spacing 값 그대로 유지
+  
+
+<br>
+<br>
+
+# Button Inset
+
+Button의 경우, 텍스트의 크기만큼 오브젝트의 크기가 설정된다.
+
+- 길이가 길어지면, width 증가
+
+- 폰트 사이즈가 커지면, width/height 증가 (height는 위아래로 간격이 있음)
+    
+    → 버튼을 탭할 영역이 필요하므로, 추가된 것
+    
+<br>
+
+**Button Inset**  
+
+버튼의 내부 여백 설정
+
+
+💡 Inset 값 설정 후, ```command``` + ```=``` 을 누르면 ```Size to Fit Content```으로 컨텐츠 사이즈에 맞게 설정
+Constraints가 설정되어있으면 자동으로 변경
+
+<br>
+
+**Button 사이즈**   
+
+Content Insets + Image Size(option) + Text Size(option)
+
+<br>
+
+**Button을 조절하고 싶다면 그전에 설정할 것**  
+
+```
+Button > Style > Default
+```
+
+<br>
+
+<img width="261" alt="ButtonInset" src="https://user-images.githubusercontent.com/63290629/219273750-379703ed-74d4-40dc-828b-795cdb7e1546.png">
+
+<br>
+
+- ```Content Insets```: 버튼 내부 컨텐츠와 버튼 크기 사이의 여백 값 설정
+
+- ```Title Insets```: Text의 여백 값 설정
+
+- ```Image Insets```: Image의 여백 값 설정
+
+    Title/Image Insets는 Image 와 Text 를 함께 버튼에 넣은 경우
+
+<br>
+
+**Button에 Image 넣기**
+
+- ```Image```: 텍스트 형태로 image
+
+- ```Background```: 버튼의 배경으로 image
+
+<br>
+
+기본적으로 Image - Text 형태로 구성되는데, 반대로도 가능하다
+
+```
+Attributes Inspector > View > Semantic > Force Right-to-Left
+```
+
+<br>
+
+💡 constraints를 설정했던 위치에서 잘못 옮겼다면 
+
+```option``` + ```command``` + ```=``` (Update Frames)
+
+<br>
+
+**🚨 주의**
+
+- **문제**: Title Insets의 값을 줬을 때, Button의 크기가 늘어나지 않아서 text만 밀리는 상황  
+   → Title Insets과 Image Insets은 Button 사이즈에 영향 미치지 않음
+
+- **해결**: content insets도 함께 값을 변경해주기
+
+
+<br>
+<br>
+
+# Code Anchor
+
+
+코드로 만들어진 오브젝트는 ```constraints``` 설정이나 크기에 대한 개념이 없으면 보이지 않음
+
+
+```swift
+import UIKit
+
+class ViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        //버튼 객체 생성 (system type : system에서 기본적으로 설정해주는
+        let button = UIButton.init(type: .system)
+        //버튼 타이틀 설정
+        button.setTitle("button", for: .normal)
+        //View위에 오브젝트 추가 (storyboard에 올려놓는 것처럼)
+        self.view.addSubview(button)
+        
+        //AutoLayout 설정을 하겠다는 의미 -> 필수
+        button.translatesAutoresizingMaskIntoConstraints = false
+        //configure constraints
+        //기본적으로 비활성화 -> isActive 파라미터 추가
+        //가운데 정렬 -> Horizontally in Container, Vertically in Container
+        button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true
+        //constant 값을 주길 원한다면 아래 코드처럼
+        //button.centerXAnchor.constraint(equalTo: self.view.centerXAnchor, constant: 100).isActive = true
+        button.centerYAnchor.constraint(equalTo: self.view.centerYAnchor).isActive = true
+        
+        let label = UILabel.init()
+        label.text = "lable"
+        
+        self.view.addSubview(label)
+        label.translatesAutoresizingMaskIntoConstraints = false
+        
+        //equalTo : 연결할 대상이 될 view -> safe area 기준
+        label.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true
+        label.leftAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leftAnchor, constant: 20).isActive = true
+    }
+}
+```
+<br>
+
+- `self.view.addSubview(오브젝트)`
+    
+    view에 오브젝트 추가 (storyboard에 올려놓는 것처럼)
+    
+- `오브젝트.translatesAutoresizingMaskIntoConstraints = false`
+    
+    AutoLayout 설정을 하겠다는 의미
+    
+- `오브젝트.centerXAnchor.constraint(equalTo: self.view.centerXAnchor).isActive = true`
+  
+    가운데 수평 정렬
+
+- `오브젝트.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 20).isActive = true`  
+
+    safe area 기준으로 constraint 설정
