@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="1l6-Qm-niJ" customClass="CustomKeyboard" customModule="CustomKeyboard" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="381" height="382"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="xNs-0c-5nr">
+                    <rect key="frame" x="0.0" y="0.0" width="381" height="382"/>
+                    <subviews>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="b4u-ma-FuJ">
+                            <rect key="frame" x="0.0" y="0.0" width="381" height="94"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ne2-j1-hse">
+                                    <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="7">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="odK-Zf-vdq"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aex-wv-t6x">
+                                    <rect key="frame" x="127.66666666666666" y="0.0" width="125.66666666666666" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="8">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="JP3-NW-o4q"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="efB-Gg-ZCS">
+                                    <rect key="frame" x="255.33333333333334" y="0.0" width="125.66666666666666" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="9">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="IFG-Ce-K7M"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="kVY-iZ-Vr2">
+                            <rect key="frame" x="0.0" y="96" width="381" height="94"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d1d-Uk-ObH">
+                                    <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="4">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="gsa-pf-qJe"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Mxy-fh-RpN">
+                                    <rect key="frame" x="127.66666666666666" y="0.0" width="125.66666666666666" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="5">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="eeD-E7-Exn"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iW5-82-7CB">
+                                    <rect key="frame" x="255.33333333333334" y="0.0" width="125.66666666666666" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="6">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="bJ8-A0-S6g"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="twh-KE-TeX">
+                            <rect key="frame" x="0.0" y="192" width="381" height="94"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8iE-pk-5Sl">
+                                    <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="1">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="Clb-BG-QJD"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x4g-6T-akh">
+                                    <rect key="frame" x="127.66666666666666" y="0.0" width="125.66666666666666" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="2">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="91V-4o-e0Q"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="w9V-ep-E2m">
+                                    <rect key="frame" x="255.33333333333334" y="0.0" width="125.66666666666666" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="3">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="bPx-ff-IOg"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                        <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GtR-gM-i10">
+                            <rect key="frame" x="0.0" y="288" width="381" height="94"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rSP-7L-AlO">
+                                    <rect key="frame" x="0.0" y="0.0" width="125.66666666666667" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="00">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="sNX-ok-Nvh"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cle-nh-D5V">
+                                    <rect key="frame" x="127.66666666666666" y="0.0" width="125.66666666666666" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="0">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="XDe-aU-zw4"/>
+                                    </connections>
+                                </button>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9VW-UX-dpC">
+                                    <rect key="frame" x="255.33333333333334" y="0.0" width="125.66666666666666" height="94"/>
+                                    <color key="backgroundColor" systemColor="systemGray6Color"/>
+                                    <state key="normal" title="Button"/>
+                                    <buttonConfiguration key="configuration" style="plain" title="000">
+                                        <fontDescription key="titleFontDescription" type="system" pointSize="24"/>
+                                    </buttonConfiguration>
+                                    <connections>
+                                        <action selector="tapButton:" destination="1l6-Qm-niJ" eventType="touchUpInside" id="QRh-W0-mDH"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
+                    </subviews>
+                </stackView>
+            </subviews>
+            <viewLayoutGuide key="safeArea" id="7C0-sJ-5es"/>
+            <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+            <constraints>
+                <constraint firstItem="xNs-0c-5nr" firstAttribute="top" secondItem="1l6-Qm-niJ" secondAttribute="top" multiplier="9" id="RDs-7Z-iry"/>
+                <constraint firstItem="xNs-0c-5nr" firstAttribute="leading" secondItem="1l6-Qm-niJ" secondAttribute="leading" id="UBa-li-whX"/>
+                <constraint firstAttribute="trailing" secondItem="xNs-0c-5nr" secondAttribute="trailing" id="dsW-zq-1lB"/>
+                <constraint firstAttribute="bottom" secondItem="xNs-0c-5nr" secondAttribute="bottom" id="vn6-qc-xZb"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <point key="canvasLocation" x="23.664122137404579" y="139.43661971830986"/>
+        </view>
+    </objects>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemGray6Color">
+            <color red="0.94901960784313721" green="0.94901960784313721" blue="0.96862745098039216" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>
